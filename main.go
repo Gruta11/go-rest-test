@@ -32,6 +32,10 @@ func main() {
 	r.Get("/panic", func(writer http.ResponseWriter, request *http.Request) {
 			panic("test")
 	})
+
+	r.Get("/info", func(writer http.ResponseWriter, request *http.Request) {
+		writer.Write([]byte("info endpoint"))
+	})
 	if *routes {
 		fmt.Println(docgen.MarkdownRoutesDoc(r, docgen.MarkdownOpts{
 			ProjectPath: "github.com/fravia190/go-rest-test",
