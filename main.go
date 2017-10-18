@@ -30,7 +30,7 @@ func main() {
 	})
 
 	r.Get("/panic", func(writer http.ResponseWriter, request *http.Request) {
-			panic("test")
+			panic("test")//Drop when panic happends
 	})
 
 	r.Get("/info", func(writer http.ResponseWriter, request *http.Request) {
